@@ -1,5 +1,6 @@
 <%
-  box_width = 100.to_f / @game.number_of_players
+
+  box_width = 65.to_f / @game.number_of_players
   box_style = 'width: calc(' + box_width.to_s + '% - 2.5px)'
 %>
 
@@ -17,8 +18,9 @@
 
 </div>
 
-<script>
+<script>  
   $(document).ready(function() {
+
     $('#js-game-box').trigger('gameReady', '<%= @game.slug %>');
   });
 </script>
