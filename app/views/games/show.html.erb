@@ -1,0 +1,24 @@
+<%
+  box_width = 100.to_f / @game.number_of_players
+  box_style = 'width: calc(' + box_width.to_s + '% - 2.5px)'
+%>
+
+<div class='cs-fill' id='js-game-box'>
+
+  <% @game.players.each do |player| %>
+
+    <div class='cs-player-box js-player-box' data-player='<%= player.ordering_index %>' style='<%= box_style %>'>
+
+      <%= render partial: 'player_box', locals: { player: player } %>
+
+    </div>
+
+  <% end %>
+
+</div>
+
+<script>
+  $(document).ready(function() {
+    $('#js-game-box').trigger('gameReady', '<%= @game.slug %>');
+  });
+</script>

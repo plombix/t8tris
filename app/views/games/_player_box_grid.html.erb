@@ -1,0 +1,29 @@
+<%
+  row_index = grid.height + grid.top_buffer - 1
+  buffer_class = Rails.env.development? ? 'cs-greyed-out' : 'cs-hidden'
+%>
+
+<table class='cs-fill cs-player-box-inner-grid js-player-box-grid'>
+
+  <% grid.top_buffer.times do %>
+    <tr class=<%= buffer_class %> data-row='<%= row_index %>'>
+      <%= render partial: 'player_box_grid_row', locals: { grid: grid, buffer_class: buffer_class } %>
+    </tr>
+    <% row_index -= 1 %>
+  <% end %>
+
+  <% grid.height.times do %>
+    <tr data-row='<%= row_index %>'>
+      <%= render partial: 'player_box_grid_row', locals: { grid: grid, buffer_class: buffer_class } %>
+    </tr>
+    <% row_index -= 1 %>
+  <% end %>
+
+  <% grid.bot_buffer.times do %>
+    <tr class=<%= buffer_class %> data-row='<%= row_index %>'>
+      <%= render partial: 'player_box_grid_row', locals: { grid: grid, buffer_class: buffer_class } %>
+    </tr>
+    <% row_index -= 1 %>
+  <% end %>
+
+</table>

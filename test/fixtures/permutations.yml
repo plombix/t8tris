@@ -1,0 +1,20 @@
+# == Schema Information
+#
+# Table name: permutations
+#
+#  id             :integer          not null, primary key
+#  piece_id       :integer
+#  ordering_index :integer
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  piece_id: 
+  ordering_index: 1
+
+two:
+  piece_id: 
+  ordering_index: 1

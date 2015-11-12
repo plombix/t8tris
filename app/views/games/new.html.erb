@@ -1,0 +1,45 @@
+<%= form_for(@game, html: { class: "cs-fill" }) do |f| %>
+
+  <% if @game.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@game.errors.count, "error") %> prohibited this game from being saved:</h2>
+
+      <ul>
+      <% @game.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.hidden_field :number_of_players, value: 2 %>
+
+  <div class='cs-new-game-screen'>
+
+      <table>
+        <tr>
+          <td>
+            name
+          </td>
+          <td>
+            <%= f.text_field :name, autocomplete: 'off', autofocus: true %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            mode
+          </td>
+          <td>
+            <%= f.select :mode, ['network', 'laptop'] %>
+          </td>
+        </tr>
+        <tr>
+          <td colspan=2>
+            <%= f.submit %>
+          </td>
+        </tr>
+      </table>
+
+  </div>
+
+<% end %>

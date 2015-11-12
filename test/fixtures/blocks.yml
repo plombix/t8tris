@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: blocks
+#
+#  id             :integer          not null, primary key
+#  permutation_id :integer
+#  x_pos          :integer
+#  y_pos          :integer
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  permutation_id: 
+  x_pos: 1
+  y_pos: 1
+
+two:
+  permutation_id: 
+  x_pos: 1
+  y_pos: 1
